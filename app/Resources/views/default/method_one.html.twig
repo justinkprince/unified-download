@@ -9,3 +9,25 @@
 
     <h3>Your download will begin shortly.</h3>
 {% endblock %}
+
+{% block javascripts %}
+    <script>
+        setTimeout(function () {
+            // Create IFRAME element
+            var iframe = document.createElement('iframe');
+
+            // Get the file path from some element's data attribute (it doesn't
+            // have to exist on the BODY element).
+            var resourceUrl = document.body.getAttribute('data-download-now-url');
+
+            // Set a class on the iFrame so we can hide it
+            iframe.setAttribute('class', 'download-now-iframe');
+
+            // Set the iFrame's SRC attribute to load the download resource
+            iframe.setAttribute('src', resourceUrl);
+
+            // Add the iFrame to the body which triggers it to load the resource
+            document.body.appendChild(iframe);
+        }, 5000); // Arbitrary delay of 5 seconds
+    </script>
+{% endblock %}

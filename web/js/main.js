@@ -1,6 +1,6 @@
 var $logOutput = $('#log-output');
 var log = function (message) {
-    $logOutput.append('&gt; ' + message + "\r\n");
+    $logOutput.append('\r\n&gt; ' + message);
 }
 
 $(document).ready(function () {
@@ -13,15 +13,3 @@ $(document).ready(function () {
         }, 5000);
     }
 });
-
-function triggerDownload() {
-    var $body = $('body');
-    var resourceUrl = $body.attr('data-resource-url');
-
-    log('Download triggered');
-
-    $('<iframe />', {
-        src: resourceUrl,
-        'class': 'download-iframe'
-    }).appendTo($body);
-}

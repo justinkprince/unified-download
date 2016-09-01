@@ -11,32 +11,15 @@
             <link rel="stylesheet" type="text/css" href="/css/main.css">
         {% endblock %}
     </head>
-    <body class="{% block body_class '' %}" data-resource-url="{{ path('download_resource') }}">
+    <body class="{% block body_class '' %}" data-download-now-url="{{ path('download_resource') }}">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-12">
                     {% block body %}{% endblock %}
                 </div>
-
-                {% block log_output %}
-                    <div class="col-sm-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Log</h3>
-                            </div>
-                            <div class="panel-body">
-                                <textarea id="log-output" class="form-control" rows="3" readonly="readonly"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                {% endblock %}
             </div>
         </div>
 
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-            <script src="/js/main.js"></script>
-        {% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
