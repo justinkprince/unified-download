@@ -1,0 +1,15 @@
+body {
+    padding: 20px;
+}
+
+.download-iframe {
+    height: 0;
+    width: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.container-fluid {
+    max-width: 1230px;
+    padding: 0 20px;
+}
